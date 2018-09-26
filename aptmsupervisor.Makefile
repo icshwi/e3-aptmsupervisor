@@ -42,15 +42,13 @@ include $(where_am_I)/../configure/DECOUPLE_FLAGS
 
 
 
-
-
 ## Exclude linux-ppc64e6500
-##EXCLUDE_ARCHS = linux-ppc64e6500
+EXCLUDE_ARCHS = linux-ppc64e6500
 
 
-# APP:=calcApp
-# APPDB:=$(APP)/Db
-# APPSRC:=$(APP)/src
+APP:=aptmsupervisorApp
+APPDB:=$(APP)/Db
+APPSRC:=$(APP)/src
 
 
 # USR_INCLUDES += -I$(where_am_I)$(APPSRC)
@@ -62,7 +60,7 @@ include $(where_am_I)/../configure/DECOUPLE_FLAGS
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
-# TEMPLATES += $(wildcard $(APPDB)/*.db)
+TEMPLATES += $(wildcard $(APPDB)/*.db)
 
 # DBDINC_SRCS += $(APPSRC)/swaitRecord.c
 # DBDINC_SRCS += $(APPSRC)/sseqRecord.c
@@ -78,6 +76,9 @@ include $(where_am_I)/../configure/DECOUPLE_FLAGS
 # HEADERS += $(APPSRC)/sCalcPostfix.h
 # HEADERS += $(APPSRC)/aCalcPostfix.h
 # HEADERS += $(DBDINC_HDRS)
+
+#SOURCES += $(APPSRC)/collision_prevention.stt
+SOURCES += $(APPSRC)/dummy.stt
 
 
 # SOURCES += $(APPSRC)/sCalcPostfix.c
@@ -98,7 +99,7 @@ include $(where_am_I)/../configure/DECOUPLE_FLAGS
 # # DBDINC_SRCS should be last of the series of SOURCES
 # SOURCES += $(DBDINC_SRCS)
 
-# DBDS += $(APPSRC)/calcSupport_LOCAL.dbd
+DBDS += $(APPSRC)/aptmsupervisor.dbd
 # DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
 # DBDS += $(APPSRC)/calcSupport_withSSCAN.dbd
 
