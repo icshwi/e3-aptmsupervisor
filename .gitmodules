@@ -1,0 +1,4 @@
+[submodule "aptmsupervisor"]
+	path = aptmsupervisor
+	url = https://github.com/icshwi/aptmsupervisor
+	ignore = all
